@@ -6,7 +6,7 @@ function ApiTest() {
   return (
     <div>
       <button onClick={ () => {
-        axios.get('https://jsonplaceholder.typicode.com/posts').then((response) => {
+        axios.get('https://api.themoviedb.org/3/movie/550?api_key=576c5d7ce8801697f0331d8450d6a2b0').then((response) => {
             setState(response.data)
         })
       }}>Click</button>
