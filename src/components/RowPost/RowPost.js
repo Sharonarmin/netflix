@@ -10,7 +10,6 @@ function RowPost(props) {
       console.log(response.data)
       setMovies(response.data.results)
     }).catch(err => {
-      alert("hello")
     })
   },[])
   return (
