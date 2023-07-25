@@ -1,20 +1,27 @@
-import React from 'react'
-import posterImg from '../assets/card.jpg'
+import React,{useEffect,useState} from 'react'
+import {imageUrl } from '../../constants/constants'
 import './rowpost.css'
+import axios from '../axios'
 
-function RowPost() {
+function RowPost(props) {
+  const [movies,setMovies] = useState([]);
+  useEffect(() => {
+    axios.get(props.url).then(response => {
+      console.log(response.data)
+      setMovies(response.data.results)
+    }).catch(err => {
+      alert("hello")
+    })
+  },[])
   return (
     <div className='row'>
-        <h2>Title</h2>
+        <h2>{props.title}</h2>
         <div className="posters">
-            <img className='posterImg' src={posterImg} alt="drama" />
-            <img className='posterImg' src={posterImg} alt="drama" />
-            <img className='posterImg' src={posterImg} alt="drama" />
-            <img className='posterImg' src={posterImg} alt="drama" />
-            <img className='posterImg' src={posterImg} alt="drama" />
-            <img className='posterImg' src={posterImg} alt="drama" />
-            <img className='posterImg' src={posterImg} alt="drama" />
-            <img className='posterImg' src={posterImg} alt="drama" />
+          {movies.map((obj) => {
+            return(
+              <img className={props.isSmall ? 'smallPosterImg' : 'posterImg'} src={`${imageUrl+obj.backdrop_path}`} alt="drama" />
+            )
+          })}
         </div>
     </div>
   )

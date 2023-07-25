@@ -1,8 +1,7 @@
-import './App.css';
-import RowPost from './components/RowPost/RowPost';
 import Navbar from './components/navbar/Navbar';
 import Banner from './components/banner/Banner';
-import ApiTest from './ApiTest';
+import { originals, action } from './urls'
+import RowPost from './components/RowPost/RowPost';
 
 
 
@@ -11,11 +10,9 @@ function App() {
     <div className="App">
        <Navbar/>      
        <Banner/>
-       <RowPost/>
-       <ApiTest/>
+       <RowPost url={originals} title='Netflix Originals'/>
+       <RowPost url={action}  title='Action' isSmall/>
 
-
-       
     </div>
   );
 }

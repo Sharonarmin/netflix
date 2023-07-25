@@ -9,10 +9,12 @@
     overflow-x: scroll;
 
 }
-/* .posters::-webkit-scrollbar{
-    display: none;
-} */
+
 .posterImg{
-    max-height: 440px;
-    margin-right: 20px;
+    max-height: 250px;
+    margin-right: 5px;
+}
+.smallPosterImg{
+    max-height: 150px;
+    margin-right: 5px;
 }
