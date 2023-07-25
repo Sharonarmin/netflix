@@ -1,5 +1,4 @@
 .banner{
-    background: url("../assets/banner.webp");
     background-size: cover;
     background-position: center;
     height: 90vh;
@@ -27,4 +26,5 @@
 .description{
     font-size: 18px;
     margin-top: 20px;
+    width: 40%;
 }
